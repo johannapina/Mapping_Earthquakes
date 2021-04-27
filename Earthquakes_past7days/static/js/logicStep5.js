@@ -87,7 +87,7 @@ function getRadius(magnitude) {
 L.geoJson(data, {
   // We turn each feature into a circleMarker on the map.
   pointToLayer: function(feature, latlng) {
-      // console.log(data);
+      console.log(data);
       return L.circleMarker(latlng);
     },
   // We set the style for each circleMarker using our styleInfo function.  
@@ -99,10 +99,9 @@ L.geoJson(data, {
   }
 }).addTo(earthquakes);
 // Then we add the earthquake layer to our map.
-earthquakes.addTo(map);
-
+earthquakes.addTo(map)});
 // Create a legend control object.
-let legend = L.control({position: "bottomleft"});
+let legend = L.control({position: "bottomright"});
 
 // Then add all the details for the legend.
 legend.onAdd = function() {
@@ -127,4 +126,4 @@ for (var i = 0; i < magnitudes.length; i++) {
 return div;
 };
 
-legend.addTo(map)});
+legend.addTo(map);
